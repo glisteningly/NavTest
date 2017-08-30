@@ -21,6 +21,8 @@
 		B9A3397A1F55B0F200226989 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A339781F55B0F200226989 /* MyCell.swift */; };
 		B9A3397B1F55B0F200226989 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9A339791F55B0F200226989 /* MyCell.xib */; };
 		B9A3397D1F55B72900226989 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A3397C1F55B72900226989 /* ListVC.swift */; };
+		B9AAEE451F5704420054418E /* MyObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEE441F5704420054418E /* MyObj.swift */; };
+		B9AAEE471F57055B0054418E /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEE461F57055B0054418E /* NotificationVC.swift */; };
 		B9ADC2141F4C63AE009CE7B0 /* sample01.png in Resources */ = {isa = PBXBuildFile; fileRef = B9ADC2131F4C63AE009CE7B0 /* sample01.png */; };
 		B9ADC2161F4C67B6009CE7B0 /* ScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ADC2151F4C67B6009CE7B0 /* ScrollVC.swift */; };
 		B9CF4D051F432C260002B99C /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CF4D041F432C260002B99C /* MyViewController.swift */; };
@@ -43,6 +45,8 @@
 		B9A339781F55B0F200226989 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		B9A339791F55B0F200226989 /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 		B9A3397C1F55B72900226989 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
+		B9AAEE441F5704420054418E /* MyObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyObj.swift; sourceTree = "<group>"; };
+		B9AAEE461F57055B0054418E /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		B9ADC2131F4C63AE009CE7B0 /* sample01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample01.png; sourceTree = "<group>"; };
 		B9ADC2151F4C67B6009CE7B0 /* ScrollVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollVC.swift; sourceTree = "<group>"; };
 		B9CF4D041F432C260002B99C /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				B9A339791F55B0F200226989 /* MyCell.xib */,
 				B9A3397C1F55B72900226989 /* ListVC.swift */,
 				B9551CF91F56A43300831941 /* CollectionVC.swift */,
+				B9AAEE441F5704420054418E /* MyObj.swift */,
+				B9AAEE461F57055B0054418E /* NotificationVC.swift */,
 			);
 			path = NavTest;
 			sourceTree = "<group>";
@@ -185,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B99780D41F02AB6E00969B47 /* ViewController.swift in Sources */,
+				B9AAEE451F5704420054418E /* MyObj.swift in Sources */,
 				B9551CFA1F56A43300831941 /* CollectionVC.swift in Sources */,
 				B93E91C21F531F3500187B86 /* PageVC.swift in Sources */,
 				B9ADC2161F4C67B6009CE7B0 /* ScrollVC.swift in Sources */,
@@ -193,6 +200,7 @@
 				B9A3397A1F55B0F200226989 /* MyCell.swift in Sources */,
 				B9CF4D051F432C260002B99C /* MyViewController.swift in Sources */,
 				B99780D21F02AB6E00969B47 /* AppDelegate.swift in Sources */,
+				B9AAEE471F57055B0054418E /* NotificationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QUU-04-OAA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2gU-BK-9w9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -500,7 +500,7 @@
         <!--首页-->
         <scene sceneID="0TP-Fg-MLD">
             <objects>
-                <viewController id="Uyf-iV-Ipv" sceneMemberID="viewController">
+                <viewController id="Uyf-iV-Ipv" customClass="NotificationVC" customModule="NavTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z4D-0E-guW"/>
                         <viewControllerLayoutGuide type="bottom" id="iBz-2T-mHQ"/>
@@ -509,16 +509,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IM-f1-pAC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IM-f1-pAC">
                                 <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="95q-gg-B1l" kind="show" id="c58-ZK-tiP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nce-Bs-cTs">
+                                <rect key="frame" x="162" y="388" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="l6b-NS-19J"/>
+                                </constraints>
+                                <state key="normal" title="测试"/>
+                                <connections>
+                                    <action selector="onClicked:" destination="Uyf-iV-Ipv" eventType="touchUpInside" id="dUw-6r-lwp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3IM-f1-pAC" firstAttribute="centerX" secondItem="5nr-To-CGR" secondAttribute="centerX" id="7xc-Ef-ozC"/>
+                            <constraint firstItem="nce-Bs-cTs" firstAttribute="top" secondItem="3IM-f1-pAC" secondAttribute="bottom" constant="40" id="GhH-o3-R5r"/>
+                            <constraint firstItem="3IM-f1-pAC" firstAttribute="centerY" secondItem="5nr-To-CGR" secondAttribute="centerY" id="MAR-1s-u6M"/>
+                            <constraint firstItem="nce-Bs-cTs" firstAttribute="centerX" secondItem="5nr-To-CGR" secondAttribute="centerX" id="wCg-bC-5wV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="首页" id="JnZ-VJ-8vN"/>
                 </viewController>
