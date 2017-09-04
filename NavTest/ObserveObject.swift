@@ -16,8 +16,17 @@ class ObserveObject: NSObject {
             return
         }
 
-        let str = (object as! NSObject).value(forKeyPath: keyPath!)
-        print(str!)
+//        let str = (object as! NSObject).value(forKeyPath: keyPath!)
+//        print(str!)
+
+        if keyPath == "str" {
+            if let old = change?[.oldKey] {
+                print("旧的值: \(old)")
+            }
+            if let new = change?[.newKey] {
+                print("新的值: \(new)")
+            }
+        }
     }
 
 }

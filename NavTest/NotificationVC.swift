@@ -8,7 +8,22 @@
 
 import UIKit
 
-class NotificationVC: UIViewController {
+class NotificationVC: UIViewController, MyObjectDelegate {
+    let divObj = MyObject()
+
+    func returnAnswer(object: MyObject, answer: Float) {
+        print("结果是: \(answer)")
+    }
+
+    func returnError(_ error: NSError?) {
+        if let error = error {
+            print("错误: \(error.localizedDescription)")
+        }
+    }
+
+    @IBOutlet weak var strValueTxt: UITextField!
+
+
     @objc dynamic var str = ""
 
     let obj = ObserveObject() //添加观察者
@@ -20,9 +35,12 @@ class NotificationVC: UIViewController {
 
         NotificationCenter.default.addObserver(myObj, selector: #selector(myObj.reciveNotification), name: NSNotification.Name(rawValue: "MYKEY"), object: nil)
 
-        addObserver(obj, forKeyPath: "str", options: .new, context: nil)
+        addObserver(obj, forKeyPath: "str", options: [.old, .new], context: nil)
 
         str = "hello"
+
+        divObj.delegate = self
+        divObj.divide(20, by: 4)
     }
 
     @IBAction func onClicked(_ sender: Any) {
@@ -36,6 +54,12 @@ class NotificationVC: UIViewController {
 
         let noti = Notification(name: Notification.Name(rawValue: "MYKEY"), object: num, userInfo: nil)
         NotificationCenter.default.post(noti)
+    }
+
+    @IBAction func changeBtn_clicked(_ sender: Any) {
+        if !(strValueTxt.text?.isEmpty)! {
+            str = strValueTxt.text!
+        }
     }
 
     override func didReceiveMemoryWarning() {

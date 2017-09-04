@@ -526,20 +526,49 @@
                                     <action selector="onClicked:" destination="Uyf-iV-Ipv" eventType="touchUpInside" id="dUw-6r-lwp"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="35x-b3-yNC">
+                                <rect key="frame" x="107" y="438" width="161" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Svd-WD-0Dz">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="FS1-Et-Cj2"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5g-1U-z7I">
+                                        <rect key="frame" x="110" y="0.0" width="51" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="51" id="FDF-5A-ADb"/>
+                                        </constraints>
+                                        <state key="normal" title="change"/>
+                                        <connections>
+                                            <action selector="changeBtn_clicked:" destination="Uyf-iV-Ipv" eventType="touchUpInside" id="V0F-TD-JUL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3IM-f1-pAC" firstAttribute="centerX" secondItem="5nr-To-CGR" secondAttribute="centerX" id="7xc-Ef-ozC"/>
                             <constraint firstItem="nce-Bs-cTs" firstAttribute="top" secondItem="3IM-f1-pAC" secondAttribute="bottom" constant="40" id="GhH-o3-R5r"/>
+                            <constraint firstItem="35x-b3-yNC" firstAttribute="top" secondItem="nce-Bs-cTs" secondAttribute="bottom" constant="20" id="HgJ-VA-ghs"/>
                             <constraint firstItem="3IM-f1-pAC" firstAttribute="centerY" secondItem="5nr-To-CGR" secondAttribute="centerY" id="MAR-1s-u6M"/>
+                            <constraint firstItem="35x-b3-yNC" firstAttribute="centerX" secondItem="5nr-To-CGR" secondAttribute="centerX" id="QTM-gT-WW8"/>
                             <constraint firstItem="nce-Bs-cTs" firstAttribute="centerX" secondItem="5nr-To-CGR" secondAttribute="centerX" id="wCg-bC-5wV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="首页" id="JnZ-VJ-8vN"/>
+                    <connections>
+                        <outlet property="strValueTxt" destination="Svd-WD-0Dz" id="7eM-ve-aqj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hM-Cu-B17" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-362" y="238"/>
+            <point key="canvasLocation" x="-362.39999999999998" y="237.93103448275863"/>
         </scene>
         <!--详情-->
         <scene sceneID="4Yd-p1-9e8">
