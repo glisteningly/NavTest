@@ -9,12 +9,20 @@
 import UIKit
 
 class NotificationVC: UIViewController {
+    @objc dynamic var str = ""
+
+    let obj = ObserveObject() //添加观察者
+
     let myObj = MyObj()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         NotificationCenter.default.addObserver(myObj, selector: #selector(myObj.reciveNotification), name: NSNotification.Name(rawValue: "MYKEY"), object: nil)
+
+        addObserver(obj, forKeyPath: "str", options: .new, context: nil)
+
+        str = "hello"
     }
 
     @IBAction func onClicked(_ sender: Any) {
