@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyObj: NSObject {
+class NoticeObj: NSObject {
     @objc func reciveNotification(_ notification: NSNotification) {
         if let num = notification.object as? NSNumber {
             print("Name: \(notification.name), Value: \(num.intValue)")

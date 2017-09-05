@@ -8,30 +8,35 @@
 
 import UIKit
 
-class NotificationVC: UIViewController, MyObjectDelegate {
+class NotificationVC: UIViewController, MyObjectDelegate, UITextFieldDelegate {
+    @IBOutlet weak var strValueTxt: UITextField!
+    
+    //添加观察对象
+    @objc dynamic var str = ""
+    
+    //添加观察者
+    let obj = ObserveObject()
+    
+    //接受消息的对象
+    let myObj = NoticeObj()
+
+    //delegate对象
     let divObj = MyObject()
 
+    //实现delegate的方法
     func returnAnswer(object: MyObject, answer: Float) {
         print("结果是: \(answer)")
     }
-
     func returnError(_ error: NSError?) {
         if let error = error {
             print("错误: \(error.localizedDescription)")
         }
     }
 
-    @IBOutlet weak var strValueTxt: UITextField!
-
-
-    @objc dynamic var str = ""
-
-    let obj = ObserveObject() //添加观察者
-
-    let myObj = MyObj()
-
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        strValueTxt.delegate = self
 
         NotificationCenter.default.addObserver(myObj, selector: #selector(myObj.reciveNotification), name: NSNotification.Name(rawValue: "MYKEY"), object: nil)
 
@@ -41,6 +46,11 @@ class NotificationVC: UIViewController, MyObjectDelegate {
 
         divObj.delegate = self
         divObj.divide(20, by: 4)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
 
     @IBAction func onClicked(_ sender: Any) {
