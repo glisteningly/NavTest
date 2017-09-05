@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import UserNotifications
 
 class NotificationVC: UIViewController, MyObjectDelegate, UITextFieldDelegate {
     @IBOutlet weak var strValueTxt: UITextField!
-    
+
     //添加观察对象
     @objc dynamic var str = ""
-    
+
     //添加观察者
     let obj = ObserveObject()
-    
+
     //接受消息的对象
     let myObj = NoticeObj()
 
@@ -70,6 +71,32 @@ class NotificationVC: UIViewController, MyObjectDelegate, UITextFieldDelegate {
         if !(strValueTxt.text?.isEmpty)! {
             str = strValueTxt.text!
         }
+    }
+
+    @IBAction func alertBtn_clicked(_ sender: Any) {
+        sendNotification(5)
+    }
+
+    @IBAction func alert2Btn_clicked(_ sender: Any) {
+        sendNotification(0)
+    }
+
+    @IBAction func clearBtn_clicked(_ sender: Any) {
+        UIApplication.shared.applicationIconBadgeNumber = 0
+    }
+
+
+    func sendNotification(_ delay: Double) {
+        let content = UNMutableNotificationContent()
+        content.title = "推送测试"
+        content.body = "Hello!"
+        content.badge = 2
+        content.sound = UNNotificationSound.default()
+
+        let trigger = (delay > 0) ? UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false) : nil
+        let request = UNNotificationRequest(identifier: "myid", content: content, trigger: trigger)
+        let center = UNUserNotificationCenter.current()
+        center.add(request, withCompletionHandler: nil)
     }
 
     override func didReceiveMemoryWarning() {

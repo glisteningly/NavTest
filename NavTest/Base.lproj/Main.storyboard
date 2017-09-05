@@ -550,11 +550,48 @@
                                     <action selector="onClicked:" destination="Uyf-iV-Ipv" eventType="touchUpInside" id="dUw-6r-lwp"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ORg-PA-rSA">
+                                <rect key="frame" x="117.5" y="206" width="140" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r41-Rv-dlz">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="xyh-ua-z4U"/>
+                                        </constraints>
+                                        <state key="normal" title="alert"/>
+                                        <connections>
+                                            <action selector="alertBtn_clicked:" destination="Uyf-iV-Ipv" eventType="touchUpInside" id="5ez-0R-TMr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csZ-kw-s8N">
+                                        <rect key="frame" x="50" y="0.0" width="40" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="E9w-Bi-CaD"/>
+                                        </constraints>
+                                        <state key="normal" title="alert2"/>
+                                        <connections>
+                                            <action selector="alert2Btn_clicked:" destination="Uyf-iV-Ipv" eventType="touchUpInside" id="IIP-cx-YWh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlD-9i-g9z">
+                                        <rect key="frame" x="100" y="0.0" width="40" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="aDk-b2-wbK"/>
+                                        </constraints>
+                                        <state key="normal" title="clear"/>
+                                        <connections>
+                                            <action selector="clearBtn_clicked:" destination="Uyf-iV-Ipv" eventType="touchUpInside" id="fxN-PN-kin"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ORg-PA-rSA" firstAttribute="centerX" secondItem="5nr-To-CGR" secondAttribute="centerX" id="2v2-H2-l90"/>
                             <constraint firstItem="3IM-f1-pAC" firstAttribute="centerX" secondItem="5nr-To-CGR" secondAttribute="centerX" id="7xc-Ef-ozC"/>
                             <constraint firstItem="35x-b3-yNC" firstAttribute="top" secondItem="z4D-0E-guW" secondAttribute="bottom" constant="50" id="CAa-34-95Q"/>
+                            <constraint firstItem="ORg-PA-rSA" firstAttribute="top" secondItem="nce-Bs-cTs" secondAttribute="bottom" constant="8" id="F5r-gQ-ydp"/>
                             <constraint firstItem="3IM-f1-pAC" firstAttribute="centerY" secondItem="5nr-To-CGR" secondAttribute="centerY" id="MAR-1s-u6M"/>
                             <constraint firstItem="35x-b3-yNC" firstAttribute="centerX" secondItem="5nr-To-CGR" secondAttribute="centerX" id="QTM-gT-WW8"/>
                             <constraint firstItem="nce-Bs-cTs" firstAttribute="top" secondItem="35x-b3-yNC" secondAttribute="bottom" constant="24" id="s5A-g4-Inx"/>

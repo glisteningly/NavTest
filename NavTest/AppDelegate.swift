@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let center = UNUserNotificationCenter.current()
+        center.delegate = self
         center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted == false {
                 print("使用者未授权")
@@ -25,22 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 //        center.setNotificationCategories()
 
-        sendNotification()
-
         return true
     }
 
-    func sendNotification() {
-        let content = UNMutableNotificationContent()
-        content.title = "推送测试"
-        content.body = "Hello!"
-        content.badge = 2
-        content.sound = UNNotificationSound.default()
-
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        let request = UNNotificationRequest(identifier: "myid", content: content, trigger: trigger)
-        let center = UNUserNotificationCenter.current()
-        center.add(request, withCompletionHandler: nil)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound, .badge])
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
