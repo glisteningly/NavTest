@@ -92,6 +92,7 @@ class NotificationVC: UIViewController, MyObjectDelegate, UITextFieldDelegate {
         content.body = "Hello!"
         content.badge = 2
         content.sound = UNNotificationSound.default()
+        content.categoryIdentifier = "c1"
 
         let trigger = (delay > 0) ? UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false) : nil
         let request = UNNotificationRequest(identifier: "myid", content: content, trigger: trigger)

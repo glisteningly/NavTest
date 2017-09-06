@@ -24,13 +24,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 print("使用者未授权")
             }
         }
-//        center.setNotificationCategories()
+        center.setNotificationCategories(setCategories())
+        
+//        注册远程推送
+//        application.registerForRemoteNotifications()
 
         return true
     }
+    
+//    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+//        print(deviceToken)
+//    }
+//
+//    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+//        print(error)
+//    }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound, .badge])
+    }
+
+    func setCategories() -> Set<UNNotificationCategory> {
+        var set = Set<UNNotificationCategory>()
+
+        let a1 = UNNotificationAction(identifier: "a1", title: "按钮1", options: [])
+        let a2 = UNNotificationAction(identifier: "a2", title: "按钮2", options: [.foreground])
+        let a3 = UNNotificationAction(identifier: "a3", title: "按钮3", options: [.destructive, .authenticationRequired])
+        let a4 = UNTextInputNotificationAction(identifier: "a4", title: "回复", options: [])
+        let c1 = UNNotificationCategory(identifier: "c1", actions: [a1, a2, a3, a4], intentIdentifiers: [], options: [])
+
+        set.insert(c1)
+
+        return set
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+
+        print(response.notification.request.content.categoryIdentifier)
+        print(response.actionIdentifier)
+
+        if (response is UNTextInputNotificationResponse) {
+            print((response as! UNTextInputNotificationResponse).userText)
+        }
+        completionHandler()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
